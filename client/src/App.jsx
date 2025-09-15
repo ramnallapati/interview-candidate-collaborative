@@ -4,6 +4,7 @@ import Register from "./pages/Register";
 import Dashboard from "./pages/Dashboard";
 import InterviewRoom from "./pages/InterviewRoom";
 
+
 function App() {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
