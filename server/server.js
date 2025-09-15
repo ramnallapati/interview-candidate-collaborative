@@ -24,7 +24,7 @@ const server = http.createServer(app);
 const io = new IOServer(server, {
 cors: {
 origin: process.env.NODE_ENV === 'production' 
-  ? ['https://interview-collaboration.vercel.app/']
+  ? ['https://interview-collaboration.vercel.app']
   : ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'],
 methods: ['GET', 'POST'],
 credentials: true
@@ -35,7 +35,7 @@ credentials: true
 // middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-    ? ['hhttps://interview-collaboration.vercel.app/']
+    ? ['https://interview-collaboration.vercel.app']
     : ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
