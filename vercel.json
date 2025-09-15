@@ -1,36 +1,36 @@
 {
+  "version": 2,
   "buildCommand": "cd client && npm run build",
   "outputDirectory": "client/dist",
   "installCommand": "cd client && npm install",
-  "functions": {
-    "client/dist/index.html": {
-      "runtime": "@vercel/static"
+  "framework": "vite",
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
     }
-  },
-  "routes": [
+  ],
+  "rewrites": [
     {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
+      "source": "/assets/(.*)",
+      "destination": "/assets/$1"
     },
     {
-      "src": "/(.*\\.js)$",
-      "dest": "/$1"
+      "source": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|map))$",
+      "destination": "/$1"
     },
     {
-      "src": "/(.*\\.css)$",
-      "dest": "/$1"
+      "source": "/vite.svg",
+      "destination": "/vite.svg"
     },
     {
-      "src": "/(.*\\.(png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot))$",
-      "dest": "/$1"
-    },
-    {
-      "src": "/vite.svg",
-      "dest": "/vite.svg"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
