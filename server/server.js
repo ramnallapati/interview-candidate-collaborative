@@ -24,11 +24,7 @@ const server = http.createServer(app);
 const io = new IOServer(server, {
 cors: {
 origin: process.env.NODE_ENV === 'production' 
-<<<<<<< HEAD
   ? ['https://interview-mu-five.vercel.app']
-=======
-  ? ['https://interview-mu-five.vercel.app/']
->>>>>>> 0c2d782bfb3637374684457a509ff54479761bf3
   : ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'],
 methods: ['GET', 'POST'],
 credentials: true
@@ -39,11 +35,7 @@ credentials: true
 // middleware
 app.use(cors({
   origin: process.env.NODE_ENV === 'production' 
-<<<<<<< HEAD
     ? ['https://interview-mu-five.vercel.app']
-=======
-    ? ['https://interview-mu-five.vercel.app/']
->>>>>>> 0c2d782bfb3637374684457a509ff54479761bf3
     : ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002'],
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
