@@ -1,21 +1,10 @@
 {
-  "version": 2,
   "buildCommand": "cd client && npm run build",
   "outputDirectory": "client/dist",
   "installCommand": "cd client && npm install",
-  "framework": "vite",
   "headers": [
     {
       "source": "/assets/(.*)",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*\\.(js|css))$",
       "headers": [
         {
           "key": "Cache-Control",
@@ -30,12 +19,8 @@
       "destination": "/assets/$1"
     },
     {
-      "source": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|map))$",
+      "source": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot))",
       "destination": "/$1"
-    },
-    {
-      "source": "/vite.svg",
-      "destination": "/vite.svg"
     },
     {
       "source": "/(.*)",
@@ -43,4 +28,3 @@
     }
   ]
 }
-  
