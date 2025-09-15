@@ -1,8 +1,7 @@
 import { io } from "socket.io-client";
+import config from './config.js';
 
-const SOCKET_URL = import.meta.env.VITE_SOCKET_URL || "http://localhost:5000";
-
-export const socket = io(SOCKET_URL, {
+export const socket = io(config.SOCKET_URL, {
   autoConnect: false,
   withCredentials: false,
 });
