@@ -19,4 +19,8 @@ if (config.isDevelopment) {
   });
 }
 
+// Always log in production for debugging
+console.log('Current API URL:', config.API_URL);
+console.log('Current Socket URL:', config.SOCKET_URL);
+
 export default config;
