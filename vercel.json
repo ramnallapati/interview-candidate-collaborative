@@ -2,6 +2,11 @@
   "buildCommand": "cd client && npm run build",
   "outputDirectory": "client/dist",
   "installCommand": "cd client && npm install",
+  "functions": {
+    "client/dist/index.html": {
+      "runtime": "@vercel/static"
+    }
+  },
   "routes": [
     {
       "src": "/assets/(.*)",
