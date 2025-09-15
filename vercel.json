@@ -21,7 +21,15 @@
       "destination": "/assets/$1"
     },
     {
-      "source": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|map))$",
+      "source": "/(.*\\.js)$",
+      "destination": "/$1"
+    },
+    {
+      "source": "/(.*\\.css)$",
+      "destination": "/$1"
+    },
+    {
+      "source": "/(.*\\.(png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|map))$",
       "destination": "/$1"
     },
     {
